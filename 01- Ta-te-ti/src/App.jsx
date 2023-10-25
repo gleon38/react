@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import confetti from "canvas-confetti";
 import { Square } from "./components/Square.jsx";
@@ -29,6 +29,7 @@ function App() {
     setWinner(null);
     resetGameStorage();
   };
+
   const updateBoard = (index) => {
     //no actualizamos esta posicion
     //si ya tiene algo
@@ -51,6 +52,10 @@ function App() {
       setWinner(false);
     }
   };
+
+  useEffect(() => {
+    console.log("useEffect");
+  });
 
   return (
     <main className="board">
